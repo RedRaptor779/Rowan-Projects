@@ -1,5 +1,5 @@
 # Rowan-Projects
-projects coded while in CS and CNI in rowan university
+projects coded while in CNI in Rowan University
 
 
 These projects were assignments assigned to me in various classes. 
