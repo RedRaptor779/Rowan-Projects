@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">              <!--Help with some of the functions and api code 
+                                                                                                        from Devression on Youtube and
+                                                                                                        search bar from dcode on youtube-->
+    <title>WeatherWise</title>
+</head>
+<body>
+
+    <!--Logout button at top of page-->
+    <button class="logout-button" onclick="logout()">Sign Out</button>
+
+    <!--Search Bar for WeatherWise-->
+    <h1>Welcome to WeatherWise</h1>
+    <p>Search for the current and next day weather anywhere in the world.</p>
+    <div class="search-bar">
+        <input type="text" id="location" placeholder="Search...">
+        <button onclick="getWeather()">Search</button>  <!--when search button is clicked run getWeather-->
+        
+    </div>  
+   
+    <div class="weather-result" id="weather-result"></div>
+
+ 
+    <script>
+        //Take user back to sign-in page function
+        function logout() {
+            location.href = '/SignIn';
+        }
+
+        //getWeather that is run when search button is clicked
+        async function getWeather(location) {
+            const enteredlocation = location || document.getElementById('location').value.trim();
+            if (!enteredlocation) {
+                document.getElementById('weather-result').innerHTML = `<p>Please enter a location.</p>`;
+                return;
+            }
+
+            const apiKey = '25aa74fa55a5449cb3e212543252204';
+            const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${enteredlocation}&days=2`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`Sorry, it looks like that location is not in our database`);
+
+                const data = await response.json();
+                const weatherResult = document.getElementById('weather-result');
+
+                const weatherToday = data.forecast.forecastday[0];
+                const weatherTomorrow = data.forecast.forecastday[1];
+
+                // Construct the full location string
+                const locationDetails = `${data.location.name}, ${data.location.region}, ${data.location.country}`;
+
+                // Update the HTML output to include the region
+                weatherResult.innerHTML = `
+                    <h3>Weather in ${locationDetails}</h3>
+                    <button class="Favorite-button" onclick="addFavorite('${locationDetails}')">♡</button>
+                    <h4>Today's Weather (${weatherToday.date}):</h4>
+                    <p>Current Temperature: ${data.current.temp_f}F</p>
+                    <p>Temperature: ${weatherToday.day.avgtemp_f}F</p>
+                    <p>Condition: ${weatherToday.day.condition.text}</p>
+                    <img src="${weatherToday.day.condition.icon}" alt="Weather Icon">
+
+                    <h4>Tomorrow's Weather (${weatherTomorrow.date}):</h4>
+                    <p>Average Temperature: ${weatherTomorrow.day.avgtemp_f}F</p>
+                    <p>Condition: ${weatherTomorrow.day.condition.text}</p>
+                `;
+            } catch (error) {
+                console.error(error);
+                document.getElementById('weather-result').innerHTML = `<p>${error.message}</p>`;
+            }
+        }
+
+        function toggleFavorite(button) {
+    button.classList.toggle('active');
+}
+
+
+function toggleFavorite(button) {
+    button.classList.toggle('active');
+    button.textContent = button.classList.contains('active') ? '♥' : '♡';
+}
+
+
+
+    //Function to add a location to favorites
+    async function addFavorite(locationDetails) {
+        const username = window.location.pathname.split('/').pop(); // Extract username from URL
+        console.log('Adding favorite for user:', username);
+
+        try {
+            const response = await fetch(`/Home/${username}/addFavorite`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ location: locationDetails }), // Send the full location string
+            });
+
+            const message = await response.text();
+            alert(message); // Show success or error message
+        } catch (error) {
+            console.error('Error adding favorite:', error);
+            alert('Failed to add favorite. Please try again.');
+        }
+    }
+    </script>
+
+    <script>
+    //Get the username from the URL
+    const urlParts = window.location.pathname.split('/');
+    const username = urlParts[urlParts.length - 1];
+    console.log('Logged in as:', username); //Log the username
+
+    //Display the username on the page
+    const welcomeMessage = document.createElement('h2');
+    welcomeMessage.textContent = `Welcome, ${username}!`;
+    document.body.insertBefore(welcomeMessage, document.body.firstChild);
+</script>
+
+    <style>
+        *{
+            background-color: lightblue;
+        }
+        .logout-button {
+            display: inline-block;
+            padding: 10px;
+            margin-left: 2px;
+            border-radius: 5px;
+            border: none;
+            font-size: 15px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+           position: absolute;
+           right: 20px;
+              top: 20px;
+              transition: .3s;
+            
+        }
+        .logout-button:hover {
+            background-color: darkblue;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            width: 300px;
+            border-radius: 20px;
+            border: 1px solid white;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .search-bar button:hover {
+            background-color: darkblue;
+        }
+
+        .weather-result {
+            text-align: center;
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .favorites-section {
+            margin-top: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .favorites-section h2 {
+            font-size: 24px;
+            color: blue;
+        }
+
+        #favorites-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #favorites-list li {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        #favorites-list li:hover {
+            color: darkblue;
+        }   
+
+        .Favorite-button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 300px;
+            background-color: rgb(134, 134, 160);
+            color: white;
+            cursor: pointer;
+            font-size: 30px;
+            transition: all .3s ease;
+        }
+
+        .Favorite-button:hover {
+            background-color: rgb(239, 71, 149);
+        }
+
+        .favorite-button.active {
+    background-color: rgb(219, 67, 174);
+    color: pink;
+}
+
+        h1 {
+            text-align: center;
+        }
+
+        p{
+            text-align: center;
+            font-size: 20px;
+        }   
+
+        img{
+            width: 100px;
+            height: 100px;
+        }
+     
+
+ 
+
+        .update-password-section {
+            margin-top: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .update-password-section input {
+            padding: 10px;
+            width: 300px;
+            border-radius: 20px;
+            border: 1px solid white;
+            font-size: 16px;
+        }
+
+        .update-password-section button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+        }
+
+        .update-password-section button:hover {
+            background-color: darkblue;
+        }
+
+    </style>
+
+<script>
+    //Function to load favorites for the user that is currently signed in
+    async function loadFavorites() {
+        const username = window.location.pathname.split('/').pop(); // Get username from URL
+        console.log('Loading favorites for user:', username);
+
+        try {
+            const response = await fetch(`/Home/${username}/getFavorites`);
+            if (!response.ok) {
+                throw new Error(await response.text());
+            }
+
+            const favorites = await response.json();
+            console.log('Favorites retrieved:', favorites);
+
+            const favoritesList = document.getElementById('favorites-list');
+            favoritesList.innerHTML = ''; // Clear the list before adding items
+
+            favorites.forEach(location => {
+                const listItem = document.createElement('li');
+                listItem.textContent = location;
+                listItem.style.cursor = 'pointer';
+                listItem.style.color = 'blue';
+                listItem.style.textDecoration = 'underline';
+
+                // Add a click event to trigger a weather search for the location
+                listItem.addEventListener('click', () => {
+                    getWeather(location);
+                });
+
+                favoritesList.appendChild(listItem);
+            });
+        } catch (error) {
+            console.error('Error loading favorites:', error);
+            alert('Failed to load favorites. Please try again.');
+        }
+    }
+
+    //Load Favorites when the page loads
+    window.onload = loadFavorites;
+</script>
+
+<div class="favorites-section">
+    <h2>Your Favorites</h2>
+    <ul id="favorites-list"></ul>
+</div>
+
+<div class="update-password-section">
+    <h2>Update Password</h2>
+    <button onclick="togglePasswordUpdate()">Update Password</button>
+    <div id="password-update-container" style="display: none; margin-top: 10px;">
+        <input type="password" id="old-password" placeholder="Enter old password">
+        <input type="password" id="new-password" placeholder="Enter new password">
+        <button onclick="updatePassword()">Submit</button>
+    </div>
+</div>
+
+<script>
+    async function updatePassword() {
+        const username = window.location.pathname.split('/').pop(); // Extract username from URL
+        const oldPassword = document.getElementById('old-password').value.trim(); // Get the old password
+        const newPassword = document.getElementById('new-password').value.trim(); // Get the new password
+
+        if (!oldPassword || !newPassword) {
+            alert('Please enter both your old and new passwords.');
+            return;
+        }
+
+        try {   
+            const response = await fetch(`/Home/${username}/updatePassword`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ oldPassword, newPassword }), // Send old and new passwords in the request body
+            });
+
+            const message = await response.text();
+            alert(message); // Show success or error message
+        } catch (error) {
+            console.error('Error updating password:', error);
+            alert('Failed to update password. Please try again.');
+        }
+    }
+
+    function togglePasswordUpdate() {
+        const container = document.getElementById('password-update-container');
+        if (container.style.display === 'none') {
+            container.style.display = 'block'; // Show the container
+        } else {
+            container.style.display = 'none'; // Hide the container
+        }
+    }
+</script>
+
+</body>
+</html>
