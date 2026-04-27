@@ -1,0 +1,47 @@
+
+/* Media query that allows you to change styling based on screen size */
+
+@media only screen and (max-width: 600px) {
+    /* if max width is = to 600px or less apply styling */
+
+    h2 {
+        color: blue;
+    }
+
+    /* apply styling to multi elements in the same media query */
+    p {
+        color: purple;
+    }
+    /* class selector */
+    .paragraph-one {
+        color: green;
+        text-decoration: underline;
+    }
+    /* id selector */
+    #paragraph-two {
+        color: orange;
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width: 601px){
+    /* if min width is = to 601px or more and max width is = to 799px or less apply styling */
+
+    h2, p{
+        text-decoration: underline;
+    }
+
+}
+
+@media only screen and (min-width: 800px) {
+    /* if min width is = to 800px or more apply styling */
+
+    h2, p {
+        color: yellow;
+    }
+
+}
+
+/* notice it keeps the underline because it applies all media queries that are met.
+style them in order in your code for readability */
+

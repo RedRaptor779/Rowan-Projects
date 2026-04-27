@@ -1,0 +1,30 @@
+.container {
+    width: 80vw;
+    margin: 0 auto;
+    border: 2px solid blue;
+
+    /* Flexbox */
+    display: flex; /* defines a flex container; we can access various properties of flexbox */
+    flex-direction: row; /* default value, we can change the direction of the items. row-reverse, column, column-reverse */
+
+}
+
+.grid-item {
+    width: 120px;
+    height: 120px;
+    margin: 2px;
+}
+
+
+#box-one {
+    background-color: yellow;
+    border: 2px solid blue;
+}
+#box-two {
+    background-color: purple;
+    border: 2px solid blue;
+}
+#box-three {
+    background-color: red;
+    border: 2px solid blue;
+}

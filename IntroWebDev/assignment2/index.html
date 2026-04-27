@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Hacker News Mailing List</title>
+        <style>
+            body {
+                background-color: #2d2d2d;
+                color: #e0e0e0;
+            }
+            h1 {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Create an Account and Subscribe to Hacker News Mailing List</h1>
+
+        <img src="siteheader.jpg" alt="Hacker News Header" />
+        <br/><br/>
+        <a href="#privacy">Privacy Policy</a> 
+        <!-- Internal link to privacy policy section -->
+        <br/><br/>
+        <!-- Description of the mailing list -->
+        <div>
+        <h3>What You'll Receive:</h3>
+            <ul>
+              <li>Hacking News
+                <ul>
+                  <li>Recent CVEs</li>
+                  <li>International Incidents</li>
+                  <li>Real time breaking updates</li>
+                </ul>
+              </li>
+              <li>Tech News
+                <ul>
+                  <li>Emerging Technologies</li>
+                  <li>AI & Machine Learning</li>
+                  <li>Software Development Trends</li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+        <br/>
+
+        <!-- Form for user subscription to the mailing list -->
+        <div>
+        <form action="/submit_form" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <br><br>
+            <input type="text" value="userName" name="username" placeholder="Enter your username" required/>
+            <br><br>
+            <input type="password" name="password" placeholder="Create your password" required/>
+            <br><br> 
+            Enter your birthdate:
+            <input type="date" value="birthdate" name="birthdate" placeholder="Enter your birthdate" required/>
+            <br><br>
+            <input type="radio" name="subscription" value="daily" required/> Daily Newsletter
+            <input type="radio" name="subscription" value="weekly" required/> Weekly Newsletter
+            <br><br> 
+            How did you hear about us?
+            <select name="source" required>
+                <option value="friend">Friend</option>
+                <option value="social_media">Social Media</option>
+                <option value="search_engine">Advertisement</option>
+                <option value="other">Other</option>
+            </select>
+            <br><br>
+            <input type="checkbox" name="terms" required/> I agree to the Terms and Conditions
+            <br><br>
+            <input type="submit" value="Subscribe">
+            </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+            <div>
+            <a id="privacy"></a> <!-- Anchor for privacy policy section -->
+            <span style="color:gray; font-size:small;"> <!-- Super small unreadable color for privacy policy text -->
+            <h3>By subscribing, you agree to receive our newsletters and promotional emails. You can unsubscribe at any time.</h3>
+            <h4>How we protect your privacy</h4>
+            
+                <p>We value your privacy and are committed to protecting your personal information. </p>
+                <p>We also sell all of your information to data brokers online. Please don't do any research into that however. </p>
+                <p>Please also dont sue us because you cant. We have REALLY good lawyers. </p>
+                <p>If you try to sue us we will make you go bankrupt. </p>
+                <p>We are also hackers, remember that.</p>
+                <p>Thank you for trusting us! And remember if you sue us all of our lawyers went to <a href="https://www.harvard.edu/" target="_blank">Harvard</a></p>
+
+            </span>
+            </div>
+    </body>
+</html>
+

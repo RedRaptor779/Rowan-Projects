@@ -1,0 +1,119 @@
+<html>
+<head>
+    <title>Lecture 1 - Introduction to Web Development</title>
+    <style>
+    span {
+        font-size: 25px;
+        color: red;
+    }
+    </style>
+</head>
+<body>
+
+    <a href="nextnextpart.html"> Go to to NEXT NEXT part</a>
+
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+    <p>Paragraph tag</p>
+
+    <p>We're working with the span tag now</p>
+
+    <h3>This is a <span>Heading 3</span> within head tag</h3>
+
+    <!-- This is a comment. Make sure you comment all your work for assignments -->
+     <!-- some other tag types:-->
+
+     <p>I hope this class is <b> going well so far </b></p>
+     <p>I hope this class is <i> going well so far </i></p>
+     <p>I hope this class is <u> going well so far </u></p>
+     <p>I hope this class is <strong> going well so far </strong></p>  
+     <p>I hope this class is <del> going well so far </del></p>
+     <p>I hope that you are drinking a lot of H<sub>2</sub>0 on January 27th</p>
+     
+
+     <!-- Now we're going to talk about forms-->
+    <h2> Forms tutorial</h2>
+
+    <!-- Some important form attributes:
+     1) action = where you want to send the data
+     2) method = what type of http request is it
+        POST - send form to database
+        GET - are we trying to recieve data
+    -->
+
+    <form action="page2.html" method="POST">
+        <input type="text" placeholder="Enter first name" name="First Name" required/>
+        <br/>
+        <br/>
+        <input type="text" placeholder="Enter last name" name="last name" required/>
+        <br/>
+        <br/>
+        <input type="email" name="Email" placeholder="Enter email"/>
+        <br/>
+        <br/>
+        <input type="password" name="Password" placeholder="Enter password"/>
+        <br/>
+        <br/>
+        <textarea row="5" col="50" placeholder="Enter your address here"></textarea>
+        <br/>
+        <br/>
+        <!-- this is a dropdown-->
+        <label>
+            Pick a location:
+            <select name="locations">
+                <option value="newyork">New York</option>
+                <option value="losangeles">Los Angeles</option>
+                <option value="chicago">Chicago</option>
+                <option value="houston">Houston</option>
+                <option value="miami">Miami</option>
+            </select>
+        </label>
+        <br/>
+        <br/>
+        <!-- this is a radio-->
+         Select your major:
+         <label>
+            <input type="radio" name="major" value="cs"/> Computer Science
+         </label>
+         <label>
+            <input type="radio" name="major" value="it"/> Computing and informatics
+         </label>
+         <label>
+            <input type="radio" name="major" value="cis"/> Electrical Engineering
+         </label>
+         <br/>
+         <br/>
+         <label>
+            <input type="date" name="dob" value="userDate"/> Date of Birth
+         </label>
+         <br/>
+         <br/>
+            <label>
+                <input type="color" name="favcolor" value="#000000"/> Select your favorite color
+            </label>
+        <br/>
+        <br/>
+            Select your favorite food:
+            <label>Pizza:
+            <input type="checkbox" name="favFood" value="pizza"/> 
+            </label>
+            <label>Sushi:
+            <input type="checkbox" name="favFood" value="sushi"/> 
+            </label>
+            <label>Burger:
+            <input type="checkbox" name="favFood" value="burger"/> 
+            </label>
+            <label>Pasta:
+            <input type="checkbox" name="favFood" value="pasta"/> 
+            </label>
+        <br/>
+        <br/>
+        <input type="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+/* attached to index_copy.html */
+
+.hide {
+    display: none;
+}
+
+.blue{
+    color: blue;
+}
+
+
+
+/* FILE: INDEX_COPY_COPY.html ----------------------------------------------------------- */
+
+.circle-div {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    border-radius: 50%;
+}

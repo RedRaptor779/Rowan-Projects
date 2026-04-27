@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 10 - jQuery</title>
+
+    <!-- CDN (Content Delivery Network) All code is hosted at google -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+        
+        <nav>
+            <ul>
+                <li><a class="nl" href="#">Home</a></li>
+                <li><a class="nl" href="#">Resources</a></li>
+                <li><a class="nl" href="#">Tutorials</a></li>
+                <li><a class="nl" href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </br>
+        <h1 id="htxt">Hacking Resources - Assignment 9</h1>
+        <h3 id="htxt">By: Michael Pieczara</h3>
+        <div class="shield"></div>
+    
+    </header>
+        <div id="home">
+            <h1>Welcome to Hacking Resources</h1>
+            <p>Your one-stop destination for all things hacking and cybersecurity.</p>
+        </div>
+    </br>
+        <div id="resources">
+            <div id="resourcesContent">
+                <h2>Top Hacking Resources</h2>
+                <ul>
+                    <li><a href="#">Hack The Box</a></li>
+                    <li><a href="#">TryHackMe</a></li>
+                    <li><a href="#">OverTheWire</a></li>
+                    <li><a href="#">CTFtime</a></li>
+                </ul>
+            </div>
+            <div class="button-row contact-buttons">
+                <button id="btnToggle" type="button">Toggle Resources</button>
+            </div>
+        </div>
+    </br>
+        <div id="tutorials">
+            <div id="tutorialsContent">
+                <h2>Latest Tutorials</h2>
+                <ol>
+                    <li><a href="#">Introduction to Ethical Hacking</a></li>
+                    <li><a href="#">Web Application Security Basics</a></li>
+                    <li><a href="#">Network Penetration Testing Guide</a></li>
+                    <li><a href="#">Exploitation Techniques Explained</a></li>
+                </ol>
+            </br>
+                <table>
+                    <tr>
+                        <th>Tool</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>Nmap</td>
+                        <td>Network scanning and enumeration tool.</td>
+                    </tr>
+                    <tr>
+                        <td>Metasploit</td>
+                        <td>Framework for developing and executing exploit code.</td>
+                    </tr>
+                    <tr>
+                        <td>Burp Suite</td>
+                        <td>Web vulnerability scanner and testing platform.</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="button-row contact-buttons">
+                <button id="btnFadeOut" type="button">Fade Out Tutorials</button>
+                <button id="btnFadeIn" type="button">Fade In Tutorials</button>
+            </div>
+        </div>
+    </br>
+        <div id="contact">
+            <h2>Contact Us</h2>
+            <form id="contactForm" action="/submit_contact" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <br><br>
+                <textarea name="message" placeholder="Your message here..." required></textarea>
+                <br><br>
+                <input id="submitBtn" type="submit" value="Send Message">
+            </form>
+            <div class="contact-buttons">
+                <label for="pickDate">Pick a date:</label>
+                <input id="pickDate" type="text" placeholder="Click for datepicker">
+            </div>
+            <p id="status"></p>
+            <div class="button-row contact-buttons">
+                <button id="btnHide" type="button">Hide Contact</button>
+                <button id="btnShow" type="button">Show Contact</button>
+            </div>
+        </div>
+
+        
+        <div id="sublist">
+            <h2>Recent Submissions</h2>
+            <ol id="submissions">
+                
+            </ol>
+        </div>
+
+        <div id="jqueryLab">
+            <h2>jQuery and jQuery UI Demo</h2>
+            <div class="button-row">
+                <button id="btnText">Change Text</button>
+                <button id="btnSingleStyle">Single Style</button>
+                <button id="btnMultiStyle">Multiple Styles</button>
+                <button id="btnToggleClass">Toggle Highlight Class</button>
+                <button id="btnAttr">Change Link Attribute</button>
+                <button id="btnAnimate">Animate Box</button>
+                <button id="btnChain">Chain Animation</button>
+                <button id="btnImageAnim">Animate Image</button>
+            </div>
+
+            <div id="animBox">Animate Me</div>
+
+            <div id="imageStage">
+                <img id="demoImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlHkvbzSDjM87LQQ8BpeV0HortD5j6tN3tqx0t8fyVQ5vd5Y9qTxEO3wc&s=10" alt="Cyber placeholder image">
+            </div>
+
+            <div id="uiAccordion">
+                <h3>NMAP</h3>
+                <div><p>Network scanning and enumeration tool.</p></div>
+                <h3>Metasploit Framework</h3>
+                <div><p>Framework for developing and executing exploit code.</p></div>
+                <h3>Burp Suite</h3>
+                <div><p>Web vulnerability scanner and testing platform.</p></div>
+            </div>
+
+            <div id="uiTools">
+                <div id="dragBox">Drag Me</div>
+            </div>
+
+            <h3>Sortable Security Tasks</h3>
+            <ul id="sortableList">
+                <li class="ui-state-default">Run port scan</li>
+                <li class="ui-state-default">Review logs</li>
+                <li class="ui-state-default">Patch vulnerable package</li>
+                <li class="ui-state-default">Retest controls</li>
+            </ul>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

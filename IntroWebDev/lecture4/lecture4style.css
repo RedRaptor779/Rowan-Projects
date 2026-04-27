@@ -1,0 +1,92 @@
+ul {
+list-style-type: none; 
+/*this is important to remove the default bullet points for navigatoin menues */
+}
+
+/* we have 4 different link states  
+a:link = standard link on your page
+*/
+
+a:link {
+    color: green;
+    text-decoration: none;
+}
+
+/* a:visited = links that the user has already visited */
+a:visited {
+    color: red;
+}
+
+/* a:hover = what style do you want to apply when hovering over a link */
+a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* a:active = when the user clicks on the link, what style do you want to apply */
+a:active {
+    color: yellow;
+}
+
+p {
+    color: blue;
+}
+
+div p {
+    color: orange;
+}
+
+/* Positioning in CSS */
+
+.box-one {
+    width: 100px;
+    height: 100px;
+    border: 2px solid blue;
+    background-color: yellow;
+    color: blue;
+
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+.box-two {
+    width: 100px;
+    height: 100px;
+    border: 2px solid blue;
+    background-color: purple;
+    color: blue;
+
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    opacity: 0.75; /* 0 is invisible, 1 is fully visible */
+    z-index: -1; /* this is used to control the stacking order of elements, higher values are in front of lower values */
+}
+.box-three {
+    width: 100px;
+    height: 100px;
+    border: 2px solid blue;
+    background-color: yellow;
+    color: blue;
+
+    position: relative;
+    left: 150px;
+
+}
+.box-four {
+    width: 100px;
+    height: 100px;
+    border: 2px solid blue;
+    background-color: yellow;
+    color: blue;
+
+    position: fixed;
+    top: 50px;
+    left: 250px;
+}
+
+.red-stick {
+    height: 1000px;
+    background-color: red;
+    width: 20px;
+}

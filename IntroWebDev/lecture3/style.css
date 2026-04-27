@@ -1,0 +1,19 @@
+h4 {
+    border: 2px solid purple;
+    width: 200px;
+
+    background-color: gray;
+
+    padding-top: 100px;
+}
+
+div {
+    height: 200px;
+    width: 220px;
+
+    /* border-width: 8px;
+    border-style: dashed;
+    border-color: red; */
+
+    border: 8px solid blue;
+}

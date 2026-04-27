@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 9</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    
+        <nav>
+            <ul>
+                <li><a class="nl" href="#">Home</a></li>
+                <li><a class="nl" href="#">Resources</a></li>
+                <li><a class="nl" href="#">Tutorials</a></li>
+                <li><a class="nl" href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </br>
+        <h1 id="htxt">Hacking Resources - Assignment 9</h1>
+        <h3 id="htxt">By: Michael Pieczara</h3>
+        <div class="shield"></div>
+    
+    </header>
+        <div id="home">
+            <h1>Welcome to Hacking Resources</h1>
+            <p>Your one-stop destination for all things hacking and cybersecurity.</p>
+        </div>
+    </br>
+        <div id="resources">
+            <h2>Top Hacking Resources</h2>
+            <ul>
+                <li><a href="#">Hack The Box</a></li>
+                <li><a href="#">TryHackMe</a></li>
+                <li><a href="#">OverTheWire</a></li>
+                <li><a href="#">CTFtime</a></li>
+            </ul>
+        </div>
+    </br>
+        <div id="tutorials">
+            <h2>Latest Tutorials</h2>
+            <ol>
+                <li><a href="#">Introduction to Ethical Hacking</a></li>
+                <li><a href="#">Web Application Security Basics</a></li>
+                <li><a href="#">Network Penetration Testing Guide</a></li>
+                <li><a href="#">Exploitation Techniques Explained</a></li>
+            </ol>
+        </br>
+            <table>
+                <tr>
+                    <th>Tool</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Nmap</td>
+                    <td>Network scanning and enumeration tool.</td>
+                </tr>
+                <tr>
+                    <td>Metasploit</td>
+                    <td>Framework for developing and executing exploit code.</td>
+                </tr>
+                <tr>
+                    <td>Burp Suite</td>
+                    <td>Web vulnerability scanner and testing platform.</td>
+                </tr>
+            </table>
+
+        </div>
+    </br>
+        <div id="contact">
+            <h2>Contact Us</h2>
+            <form id="contactForm" action="/submit_contact" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <br><br>
+                <textarea name="message" placeholder="Your message here..." required></textarea>
+                <br><br>
+                <input id="submitBtn" type="submit" value="Send Message">
+            </form>
+            <p id="status"></p>
+        </div>
+
+        
+        <div id="sublist">
+            <h2>Recent Submissions</h2>
+            <ol id="submissions">
+                
+            </ol>
+        </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

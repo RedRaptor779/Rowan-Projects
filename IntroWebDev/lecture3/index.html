@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic CSS</title>
+    <style>
+
+        /* element selector */
+
+        h1 {
+            color: blue;
+        }
+        h3 {
+            color: red;
+        }
+        h4 {
+            color: yellow;
+        }
+        p {
+            color: green;
+            font-size: 22px;
+        }
+
+        h2 {
+            color: purple;
+        }
+
+
+        /* class selector */
+
+        .second-header {
+            color: orange;
+        }
+
+        .override-color {
+            color: aqua;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .red-text {
+            color: red;
+        }
+
+        /* ID selector */
+
+        #blue-paragraph {
+            color: blue;
+        }
+        #red-paragraph {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>This is a very cool course</h2>
+    <h2 class="second-header">The professor is cool too</h2>
+    <h1>Androids Comic Books</h1>
+    <h3>Take me to your comic books and baseball cards</h3>
+    <p class="override-color red-text">We have a store opening on 47th stree in nyc</p> <!-- The override occurs based on the order of classes in the list-->
+    <h4>We will also sell video games too!</h4>
+    <p class="red-text">This paragraph will be blue</p>
+
+    <br><br><br>
+
+    <p id="blue-paragraph"> This is a blue paragraph </p>
+    <p id="red-paragraph"> This is a red paragraph </p>
+
+    <a href="nextpage.html">Go to next page</a>
+</body>
+</html>

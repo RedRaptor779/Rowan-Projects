@@ -1,0 +1,56 @@
+/* 
+COMMENTED OUT FOR LECTURE PURPOSES
+
+.container {
+    width: 400px;
+    margin: 0 auto; 
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-item {
+    width: 240px;
+    height: 240px;
+    margin: 2px;
+    background-color: yellow;
+    border: 2px solid blue;
+}
+*/
+/* in addition to our regular css we can also write a media query */
+
+/* @media only screen and (min-width: 800px) {
+    /* change the direction based on media query *//*
+    .container {
+        flex-direction: row;
+    }
+}  */
+
+.container {
+    border: 2px solid blue;
+    width: 80vw;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-around; /*flex-end, center, flex-start, space-between, space-around, space-evenly*/
+
+}
+.grid-item {
+    width: 120px;
+    height: 120px;
+    margin: 3%;
+    background-color: yellow;
+    border: 2px solid blue;
+}
+
+/* media query for mobile devices */
+
+@media only screen and (max-width: 600px) {
+    .container {
+        /* note that the parent already defines the display flex */
+        flex-direction: column;
+        align-items: center;
+    }
+}

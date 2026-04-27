@@ -1,0 +1,196 @@
+/* Basic reset */
+body, h1, h2, h3, p, ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, darkgray, black);
+    color: red;
+}
+
+/* Shield Icon */
+.shield {
+    position: relative;
+    width: 120px;
+    height: 150px;
+    background: red;
+    border: 3px solid red;
+    margin: 0 auto;
+    margin-top: 50px;
+    /* shield shape using polygon method (thank you reddit)*/
+    clip-path: polygon(
+        50% 0%,   /* top center */
+        90% 20%,  /* top right */
+        80% 80%,  /* lower right */
+        50% 100%, /* Bottom point */
+        20% 80%,  /* lower left */
+        10% 20%   /* top left */
+    );
+}
+
+#htxt {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 36px;
+    color: red;
+    font-weight: bold;
+}
+
+
+/* Navigation styling */
+nav {
+    width: 90wv;
+    margin: 0 auto;
+    text-align: center;
+    position: fixed;
+    top: 0;
+}
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+nav ul li a {
+    color: red;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+nav ul li a:hover {
+    background-color: lightcoral;
+    border-radius: 5px;
+}
+
+/* page and list styling */
+#home, #resources, #tutorials, #contact, #sublist {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+#sublist {
+    list-style-position: inside;
+    color: red;
+}
+
+#sublist li {
+    margin: 8px 0;
+}
+
+.submission-item {
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.recent-submission {
+    background-color: #ffe6e6;
+}
+
+#resources ul, #tutorials ol {
+    margin-left: 20px;
+    color: red;
+}
+
+#tutorials table {
+    width: 100%;
+    border-collapse: collapse;
+}
+#tutorials th, #tutorials td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+#tutorials th {
+    background-color: darkgray;
+}
+#tutorials td {    background-color: white;
+}
+
+
+/* list styling */
+#resources ul li a, #tutorials ol li a {
+    color: red;
+    text-decoration: none;
+}
+#resources ul li a:hover, #tutorials ol li a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+/* #contact form styling */
+#contact form {
+    background-color: lightgray;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* --- Responsive rules --- */
+/* Smaller screens */
+@media (max-width: 600px) {
+    #home, #resources, #tutorials, #contact, #sublist {
+        width: 95%;
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column; /* stack nav links */
+        gap: 8px;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #htxt {
+        font-size: 24px;
+        text-align: center;
+        padding: 50px;
+    }
+
+    /* make table compact on narrow screens */
+    #tutorials th, #tutorials td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* Larger screens */
+@media (min-width: 1024px) {
+    .header-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 5%;
+    }
+
+    nav {
+        width: 80%;
+    }
+
+    .grid {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    #resources, #tutorials {
+        width: 48%;
+    }
+
+    #htxt {
+        font-size: 36px;
+        text-align: left;
+    }
+
+    nav ul {
+        justify-content: flex-end;
+    }
+}

@@ -1,0 +1,135 @@
+.circle {
+    width: 150px;
+    height: 150px;
+    border: blue 10px solid;
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+#black-circle {
+    border: 10px solid black;
+}
+#red-circle {
+    border: 10px solid red;
+}
+#gold-circle {
+    border: 10px solid gold;
+}
+#green-circle {
+    border: 10px solid green;
+}
+
+.row-two {
+    position: relative;
+    left: 75px;
+    bottom: 75px;
+    z-index: -1;
+}
+
+/* Next part for forms */
+
+.form-div {
+    background-color: lightblue;
+    width: 50vw;
+    margin: 0 auto;
+    padding: 25px;
+    height: 300px;
+}
+
+.text-field, .text-area {
+    display: block;
+    margin: 18px auto;
+    width: 70%;
+    font-size: 20px;
+    border-radius: 5.5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: blue;
+    font-weight: bold;
+}
+
+.text-field {
+    height: 30px;
+    border: 1px solid lightgray;
+}
+
+.text-area {
+    height: 80px;
+}
+
+.button {
+    position: relative;
+    left: 75px;
+    width: 100px;
+    height: 45px;
+    background-color: purple;
+    color: red;
+    font-weight: bold;
+    border-radius: 7.5px;
+}
+
+/* TABLES NOW */
+
+table, th, td {
+    border: 1px solid black;
+}
+
+table {
+    width: 400px;
+    height: 200px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 15px;
+    background-color: aqua;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+    vertical-align: top;
+    background-color: yellow;
+
+}
+
+/* NOW NAVIGATION MENUS */
+
+nav {
+    width: 90wv;
+    margin: 0 auto;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: georgia, 'Times New Roman', Times, serif;
+    color: blue;
+
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: lightblue;
+    font-weight: bold;
+}
+
+/* HEADER */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    /* background-image: linear-gradient(to right, blue, lightblue); */
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    width: 100vw;
+    height: 100vw;
+}
