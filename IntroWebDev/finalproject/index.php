@@ -9,7 +9,7 @@ $reviews = [];
 // Step 1: setup connection variables (provided config)
 $servername = 'elvisdb';
 $username = 'piecza14';
-$password = '11!W3Bd3vclass21!';
+$password = 'OMITTED';
 $dbname = 'piecza14';
 
 // Step 2: create a connection to the database
