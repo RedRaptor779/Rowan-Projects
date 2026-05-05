@@ -78,7 +78,7 @@ mysql -u piecza14 -p -h elvisdb
         // step 1: setup our connection variables
         $servername = 'elvisdb';
         $username = 'piecza14';
-        $password = '11!W3Bd3vclass21!';
+        $password = 'OMITTED';
         $dbname = 'piecza14';
 
         // step 2: create a connection to the database
